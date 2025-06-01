@@ -16,20 +16,18 @@ function App() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   return (
-    <div className="Home">
+    <div>
       <AppContext.Provider value={{ users, setUsers, user, setUser }}>
         <BrowserRouter>
           <Header />
-          <div className="main">
-            <Routes>
-              <Route index element={<Product />} />
-              <Route path="/" element={<Product />}></Route>
-              <Route path="/cart" element={<Cart />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-              <Route path="/logout" element={<Logout />}></Route>
-              <Route path="/register" element={<Register />}></Route>
-            </Routes>
-          </div>
+          <Routes>
+            <Route index element={<Product />} />
+            <Route path="/" element={<Product />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/logout" element={<Logout />}></Route>
+            <Route path="/register" element={<Register />}></Route>
+          </Routes>
           <Footer />
         </BrowserRouter>
       </AppContext.Provider>
