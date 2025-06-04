@@ -5,7 +5,12 @@
   justify-content: center;
   border-radius: 8px;
   background-color: aqua;
+
+  max-width: 300px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
 }
+
 
 .box1 {
   display: flex;
