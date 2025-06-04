@@ -9,7 +9,7 @@
 
 .products {
   box-sizing: border-box;
-  width: 10px;
+  margin-left: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
