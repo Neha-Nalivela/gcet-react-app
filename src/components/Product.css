@@ -16,3 +16,8 @@
   border-radius: 8px;
   background-color: lightgreen; 
 }
+
+.box1{
+    display:flex;
+    justify-content: space-between;
+}
