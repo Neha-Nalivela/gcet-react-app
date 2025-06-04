@@ -6,7 +6,7 @@ export default function Product() {
   const { user } = useContext(AppContext);
   const [products, setProducts] = useState([]);
 
-  const API = https://gcet-node-app-sable.vercel.app;
+  const API = "https://gcet-node-app-sable.vercel.app";
 
   const fetchProducts = async () => {
     try {
