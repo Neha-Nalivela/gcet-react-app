@@ -9,7 +9,7 @@
 
 .products {
   box-sizing: border-box;
-  margin-left: 200px;
+  max-width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
