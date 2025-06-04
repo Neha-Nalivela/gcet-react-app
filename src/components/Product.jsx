@@ -29,9 +29,9 @@ export default function Product() {
       <ul style={{ listStyle: "none", padding: 0 }}>
         {products.length > 0 ? (
           products.map((product) => (
-              <li key={product.id} style={{ margin: "10px 0" }}>
-                <strong>{product.name}</strong>: ${product.price}
-              </li>
+            <li key={product._id || product.id} style={{ margin: "10px 0" }}>
+              <strong>{product.name}</strong>: ${product.price}
+            </li>
           ))
         ) : (
           <li>No products available.</li>
