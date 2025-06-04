@@ -1,12 +1,19 @@
-.box{
-    box-sizing: border-box;
-    align-items: center;
-    border-radius: 8px;
-    background-color: aqua;
+.box {
+  /* shared base styles */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: aqua;
 }
-.products{
-    box-sizing: border-box;
-    align-items: center;
-    border-radius: 8px;
-    background-color: aqua;
+
+.products {
+  /* start with same base or tweak */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: lightgreen; /* for example */
 }

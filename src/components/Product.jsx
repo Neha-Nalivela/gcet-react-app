@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
+import "./Product.css";
 
 export default function Product() {
   const { user } = useContext(AppContext);
@@ -26,7 +27,7 @@ export default function Product() {
     <div>
       <h3>Welcome {user?.name || "Guest"}!</h3>
       <h4>Product List</h4>
-      <div class = "products">
+      <div className = "products">
         <ul style={{ listStyle: "none", padding: 0 }}>
           {products.length > 0 ? (
             products.map((product) => (
