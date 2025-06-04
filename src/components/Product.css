@@ -18,7 +18,7 @@
   box-sizing: border-box;
   max-width: 250px;
   width: 100%;
-  margin: 0 auto;
+  margin: 25px auto;
   padding: 16px;
   display: flex;
   flex-direction: column;
