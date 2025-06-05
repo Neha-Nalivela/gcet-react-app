@@ -1,27 +1,24 @@
-import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../App";
+import axios from "axios";
 import "./Product.css";
-
 export default function Product() {
-  const { user } = useContext(AppContext);//Add 
-  const [products, setProducts] = useState([]);
-
-  const API = "https://gcet-node-app-sable.vercel.app";
-
+  const { user, products, setProducts, cart, setCart } = useContext(AppContext);
+  // const [products, setProducts] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
   const fetchProducts = async () => {
-    try {
-      const res = await axios.get(`${API}/products/all`);
-      console.log("Fetched products:", res.data);
-      setProducts(res.data);//context variable
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
+    const res = await axios.get(`${API}/products/all`);
+    setProducts(res.data);
   };
-
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  const addToCart = (id) => {
+    !cart[id] && setCart({ ...cart, [id]: 1 });
+    
+  };
 
   return (
     <div className="box">
@@ -32,7 +29,7 @@ export default function Product() {
           {products.map((product) => (
             <div key={product._id || product.id} className="product-item">
               <strong>{product.name}</strong>:<br></br> ₹{product.price}<br></br>
-              <button style={{backgroundColor:"yellow"}}>Add to cart</button>
+              <button onClick={() => addToCart(value.pid)} style={{backgroundColor:"yellow"}}>Add to cart</button>
             </div>
           ))}
         </div>
