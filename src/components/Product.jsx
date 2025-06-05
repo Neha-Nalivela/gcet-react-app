@@ -29,7 +29,10 @@ export default function Product() {
           {products.map((product) => (
             <div key={product._id || product.id} className="product-item">
               <strong>{product.name}</strong>:<br></br> ₹{product.price}<br></br>
-              <button onClick={() => addToCart(value.pid)} style={{backgroundColor:"yellow"}}>Add to cart</button>
+              <button onClick={() => addToCart(product._id)} style={{ backgroundColor: "yellow" }}>
+  Add to cart
+</button>
+
             </div>
           ))}
         </div>
