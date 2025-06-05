@@ -3,6 +3,9 @@ import { AppContext } from "../App";
 import "./Login.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+const API = import.meta.env.VITE_API_URL
+
 export default function Login() {
   const { users, user, setUser } = useContext(AppContext);
   const [msg, setMsg] = useState();

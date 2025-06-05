@@ -26,27 +26,22 @@ export default function Product() {
   return (
     <div>
       <h3>Welcome {user?.name || "Guest"}!</h3>
-      <div className="box1">
-        <h4>Product List</h4>
-        <div className="box">
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            {products.length > 0 ? (
-              products.map((product) => (
-                <div className="products">
-                  <li
-                    key={product._id || product.id}
-                    style={{ margin: "10px 0" }}
-                  >
-                    <strong>{product.name}</strong>: ${product.price}
-                  </li>
-                </div>
-              ))
-            ) : (
-              <li>No products available.</li>
-            )}
-          </ul>
+      
+      <h4 style={{ textAlign: "center" }}>Product List</h4>
+      {products.length > 0 ? (
+        <div className="products">
+          {products.map((product) => (
+            <div
+              key={product._id || product.id}
+              className="product-item"
+            >
+              <strong>{product.name}</strong>:<br></br>${product.price}
+            </div>
+          ))}
         </div>
-      </div>
+      ) : (
+        <p style={{ textAlign: "center" }}>No products available.</p>
+      )}
     </div>
   );
 }
