@@ -15,9 +15,11 @@ export const AppContext = createContext();
 function App() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({}); 
   return (
     <div>
-      <AppContext.Provider value={{ users, setUsers, user, setUser }}>
+      <AppContext.Provider value={{ users, setUsers, user, setUser, products, setProducts, cart, setCart, }}>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -25,6 +27,7 @@ function App() {
             <Route path="/" element={<Product />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/order" element={<Order />}></Route>
             <Route path="/logout" element={<Logout />}></Route>
             <Route path="/register" element={<Register />}></Route>
           </Routes>

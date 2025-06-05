@@ -4,7 +4,7 @@ import { AppContext } from "../App";
 import "./Product.css";
 
 export default function Product() {
-  const { user } = useContext(AppContext);
+  const { user } = useContext(AppContext);//Add 
   const [products, setProducts] = useState([]);
 
   const API = "https://gcet-node-app-sable.vercel.app";
@@ -13,7 +13,7 @@ export default function Product() {
     try {
       const res = await axios.get(`${API}/products/all`);
       console.log("Fetched products:", res.data);
-      setProducts(res.data);
+      setProducts(res.data);//context variable
     } catch (error) {
       console.error("Error fetching products:", error);
     }

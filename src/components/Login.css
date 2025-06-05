@@ -8,7 +8,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 3px solid #b6e5d8; /* Spearmint border */
 }
 
 .login-box h3 {
@@ -30,8 +29,8 @@
 }
 
 .login-box input:focus {
-  border-color: #66c6ba; /* turquoise focus */
-  background-color: #f3fff9; /* light mint background */
+  border-color: #71b1a9; /* turquoise focus */
+  background-color: #dcf7e9; /* light mint background */
   outline: none;
 }
 
