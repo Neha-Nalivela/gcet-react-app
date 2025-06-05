@@ -30,11 +30,9 @@ export default function Product() {
       {products.length > 0 ? (
         <div className="products">
           {products.map((product) => (
-            <div
-              key={product._id || product.id}
-              className="product-item"
-            >
-              <strong>{product.name}</strong>:<br></br> ${product.price}
+            <div key={product._id || product.id} className="product-item">
+              <strong>{product.name}</strong>:<br></br> ₹{product.price}<br></br>
+              <button style={{backgroundColor:"yellow"}}>Add to cart</button>
             </div>
           ))}
         </div>

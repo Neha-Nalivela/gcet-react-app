@@ -1,7 +1,9 @@
+// src/components/Register.jsx
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -19,7 +21,7 @@ export default function Register() {
     try {
       const res = await axios.post(`${API}/users/register`, newUser);
       setMsg("Registered successfully!");
-      setUser(res.data); // optional: store returned user data
+      setUser(res.data);
       navigate("/login");
     } catch (err) {
       console.error("Registration failed:", err);
@@ -28,7 +30,7 @@ export default function Register() {
   };
 
   return (
-    <div style={{ margin: "30px" }}>
+    <div className="register-box">
       <h3>Register</h3>
       {msg && <p>{msg}</p>}
       <p>
@@ -49,7 +51,9 @@ export default function Register() {
         <input
           type="password"
           placeholder="New Password"
-          onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+          onChange={(e) =>
+            setNewUser({ ...newUser, password: e.target.value })
+          }
         />
       </p>
       <button onClick={handleSubmit}>Submit</button>

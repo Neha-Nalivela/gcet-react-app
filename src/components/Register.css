@@ -1,7 +1,7 @@
-/* src/components/Login.css */
+/* src/components/Register.css */
 
-.login-box {
-  max-width: 400px;
+.register-box {
+  max-width: 450px;
   margin: 50px auto;
   padding: 30px 40px;
   background: #fbe5c8; /* Peach background */
@@ -11,17 +11,18 @@
   border: 3px solid #b6e5d8; /* Spearmint border */
 }
 
-.login-box h3 {
+.register-box h3 {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
 }
 
-.login-box input[type="email"],
-.login-box input[type="password"] {
+.register-box input[type="text"],
+.register-box input[type="email"],
+.register-box input[type="password"] {
   width: 100%;
   padding: 12px 14px;
-  margin: 12px 0;
+  margin: 10px 0;
   border: 2px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
@@ -29,13 +30,13 @@
   transition: border-color 0.3s, background-color 0.3s;
 }
 
-.login-box input:focus {
-  border-color: #66c6ba; /* turquoise focus */
-  background-color: #f3fff9; /* light mint background */
+.register-box input:focus {
+  border-color: #40c4b0; /* turquoise */
+  background-color: #f3fff9;
   outline: none;
 }
 
-.login-box button {
+.register-box button {
   width: 100%;
   padding: 12px 0;
   background-color: #ffc2c7; /* Rosewater */
@@ -49,18 +50,12 @@
   margin-top: 10px;
 }
 
-.login-box button:hover {
-  background-color: #f6aeb5; /* deeper rosewater */
+.register-box button:hover {
+  background-color: #f6aeb5;
 }
 
-.login-box p {
-  text-align: center;
-  color: #555;
+.register-box li {
   font-size: 0.95rem;
-  margin-top: 10px;
-}
-
-.login-box p:first-of-type {
-  font-weight: bold;
-  color: #d9534f; /* red for error or status */
+  color: #555;
+  margin: 4px 0;
 }
