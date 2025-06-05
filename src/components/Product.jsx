@@ -24,9 +24,8 @@ export default function Product() {
   }, []);
 
   return (
-    <div>
+    <div className="box">
       <h3>Welcome {user?.name || "Guest"}!</h3>
-      
       <h4 style={{ textAlign: "center" }}>Product List</h4>
       {products.length > 0 ? (
         <div className="products">
@@ -35,7 +34,7 @@ export default function Product() {
               key={product._id || product.id}
               className="product-item"
             >
-              <strong>{product.name}</strong>:<br></br>${product.price}
+              <strong>{product.name}</strong>:<br></br> ${product.price}
             </div>
           ))}
         </div>
