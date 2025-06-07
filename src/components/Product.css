@@ -1,5 +1,5 @@
 .box {
-  background-color: rgb(87, 203, 87);
+  background-color: rgb(139, 248, 139);
   border-radius: 8px;
   padding: 16px;
   max-width: 1000px;         /* Responsive max width */
@@ -18,10 +18,10 @@
 }
 
 .product-item {
-  background-color: white;
+  background-color: rgb(230, 239, 233);
   padding: 10px 16px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(190, 140, 140, 0.1);
   min-width: 120px;
   text-align: center;
 }
