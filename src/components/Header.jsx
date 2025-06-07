@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className="home">
       <h1>My Online Shop</h1>
-      <Link to="/">Home</Link>-<Link to="/cart">Cart</Link>-
+      <Link to="/">Home</Link>-<Link to="/order"></Link><Link to="/cart">Cart</Link>-
       {user.token ? (
         <Link to="/logout">Logout</Link>
       ) : (
