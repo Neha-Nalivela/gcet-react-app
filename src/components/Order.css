@@ -1,0 +1,13 @@
+.orders{
+    max-width: 1000px;
+    background-color: rgb(139, 248, 139);
+    align-content: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    padding: 16px;
+}
+.or{
+    text-align: center;
+    color:rgb(8, 8, 7)
+}

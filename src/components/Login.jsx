@@ -26,7 +26,7 @@ export default function Login() {
       setUser({
         name: res.data.name,
         email: res.data.email,
-        token: "123", // if you later use JWT or token, replace this
+        token: res.data.token, // if you later use JWT or token, replace this
       });
       setMsg("Welcome " + res.data.name);
       navigate("/"); // redirect to home

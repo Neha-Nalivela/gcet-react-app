@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { AppContext } from "../App";
 import { useEffect } from "react";
+import './Order.css'
 import axios from "axios";
 export default function Order() {
   const [orders, setOrders] = useState([]);
@@ -17,8 +18,10 @@ export default function Order() {
 fetchOrders()
   }, []);
   return (
-    <div>
-      <h3>My Orders</h3>
+    <div className="orders">
+      <div className="or">
+        <h3>My Orders</h3>
+      </div>
       <ol>
         {orders &&
           orders.map((value) => (
