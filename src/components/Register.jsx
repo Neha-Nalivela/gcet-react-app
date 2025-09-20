@@ -56,6 +56,15 @@ export default function Register() {
           }
         />
       </p>
+      <p>
+        <input
+          type="text"
+          placeholder="Role"
+          onChange={(e) =>
+            setNewUser({ ...user, role: e.target.value })
+          }
+        />
+      </p>
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );

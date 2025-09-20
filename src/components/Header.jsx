@@ -10,10 +10,14 @@ export default function Header() {
       <h1>My Online Shop</h1>
       <Link to="/">Home</Link>-<Link to="/order">Orders</Link>-<Link to="/cart">Cart</Link>-
       {user.token ? (
-        <Link to="/logout">Logout</Link>
+        <>
+          {user.role==="admin" && <Link to="/admin">Admin</Link>}
+          <Link to="/logout">Logout</Link>
+        </>
       ) : (
         <Link to="/login">Login</Link>
       )}
+
       <hr />
     </div>
   );

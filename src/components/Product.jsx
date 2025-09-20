@@ -7,29 +7,19 @@ export default function Product() {
   const { user, products, setProducts, cart, setCart } = useContext(AppContext);
   const API = import.meta.env.VITE_API_URL;
 
-  // const fetchProducts = async () => {
-  //   try {
-  //     const res = await axios.get(`${API}/products/all`);
-  //     setProducts(res.data);
-  //   } catch (error) {
-  //     console.error("Error fetching products:", error);
-  //   }
-  // };
-
   const fetchProducts = async () => {
-  try {
-    const token = user?.token || localStorage.getItem("token");
-    const res = await axios.get(`${API}/products/all`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    setProducts(res.data);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-};
-
+    try {
+      const token = user?.token || localStorage.getItem("token");
+      const res = await axios.get(`${API}/products/all`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setProducts(res.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
 
   const addToCart = (id) => {
     if (!cart[id]) {
@@ -52,8 +42,8 @@ export default function Product() {
               <strong>{product.name}</strong>: ₹{product.price}
               <br />
               <button
+                className="add-btn"
                 onClick={() => addToCart(product._id)}
-                style={{ backgroundColor: "yellow" }}
               >
                 Add to cart
               </button>

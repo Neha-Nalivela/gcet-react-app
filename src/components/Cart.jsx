@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { AppContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Cart.css"; // <-- add CSS file
 
 export default function Cart() {
   const { cart, setCart, products, user } = useContext(AppContext);
@@ -40,24 +41,29 @@ export default function Cart() {
   };
 
   return (
-    <div>
-      <h3>My Cart</h3>
+    <div className="cart-container">
+      <h3 className="cart-title">My Cart</h3>
       {products
         .filter((product) => cart[product._id])
         .map((product) => (
-          <div key={product._id}>
-            {product.name} - ₹{product.price} x {cart[product._id]}
-            <button onClick={() => decrement(product._id)}>-</button>
-            <button onClick={() => increment(product._id)}>+</button>
-            = ₹{product.price * cart[product._id]}
+          <div className="cart-item" key={product._id}>
+            <span>{product.name}</span>
+            <span>₹{product.price} x {cart[product._id]}</span>
+            <div className="cart-buttons">
+              <button onClick={() => decrement(product._id)}>-</button>
+              <button onClick={() => increment(product._id)}>+</button>
+            </div>
+            <span>= ₹{product.price * cart[product._id]}</span>
           </div>
         ))}
       <hr />
-      <h3>Order Value: ₹{orderValue}</h3>
+      <h3 className="order-value">Total: ₹{orderValue}</h3>
       {user.name ? (
-        <button onClick={placeOrder}>Place Order</button>
+        <button className="place-order" onClick={placeOrder}>Place Order</button>
       ) : (
-        <button onClick={() => navigate("/login")}>Login to Order</button>
+        <button className="login-btn" onClick={() => navigate("/login")}>
+          Login to Order
+        </button>
       )}
     </div>
   );
